@@ -4,6 +4,7 @@
 #include <sensor.h>
 #include <actuator.h>
 #include "functions.h"
+#include <Trigger.h>
 
 
 Sensor sensor = Sensor(String("lm35"), String("°C"));
@@ -17,9 +18,12 @@ void setup() {
 
 void loop() {
   Serial.println(sensor.run(0));
-  actuator.report(Serial);
+  if (Serial.read() = actuator.getTrigger()) {
+    actuator.report(Serial);
   while(1){
-
   }
+  }
+  
+  
 }
 

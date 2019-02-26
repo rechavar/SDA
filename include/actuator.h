@@ -21,7 +21,7 @@ void Actuator::report(Stream &uart){ //Se crea el objeto y se llenan los valores
     res["id"] = this->getId();
     res["type"] = "Actuator";
     res["act_type"] = this->getType();
-    res["Trigger"] = this->setTrigger();
+    res["Trigger"] = this->getTrigger();
     String out;
     res.prettyPrintTo(out);
     uart.println(out);
